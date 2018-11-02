@@ -1,0 +1,16 @@
+syntax = "proto3";
+service Person {
+    rpc GetPerson(GetMessage) returns (GetPersonResponse) {}
+}
+
+message GetMessage {
+    int64 target_type = 1; ///種類番号
+}
+message GetPersonResponse {
+    int64 id=1; ///ID番号
+    string name=2; ///名前
+    string created_date=3; ///作成時刻
+    string updated_date=4; ///更新時刻
+    string last_access_date=5; ///最終更新時刻
+}
+
